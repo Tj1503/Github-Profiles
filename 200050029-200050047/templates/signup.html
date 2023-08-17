@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}signup{% endblock %}
+{% block dashboard %}
+<a href=/signup>
+    <button type="button">
+        SignUp
+    </button>
+</a> 
+<a href="/accounts/login">
+    <button type="button">
+        Log In
+    </button>
+</a>
+{%endblock%}
+
+{%block content%}
+<div class="content">
+<h3>Signup with GitHub profile</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ signupform.as_ul }}
+  <button type="submit">Sign Up</button>
+</form>
+</div>
+{%endblock%}

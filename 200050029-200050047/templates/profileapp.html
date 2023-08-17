@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}profile{% endblock %}
+{% block dashboard %}
+<a href=/explore>
+    <button type="button">
+        Explore
+    </button>
+</a> 
+<a href="/profileapp">
+    <button type="button">
+        My Profile
+    </button>
+</a>
+<a href="/accounts/login">
+    <button type="button">
+        Logout
+    </button>
+</a>
+{%endblock%}
+
+{%block content%}
+<div class="content">
+<h1> {{user.first_name}}{{user.last_name}}(@{{user}})</h1>
+<p>Profile Last Updated:{{profile.timeoflastupdate}}
+    <a href="/profileapp/update">
+        Update Now
+    </a>
+</p>
+<p>{{profile.followers}} followers</p>
+<ul>
+    {%for k in repos%}
+        <li>{{k.reponame}} : {{k.stars}}</li>
+    {%endfor%}
+</ul>
+</div>
+{%endblock%}

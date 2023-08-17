@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!---<link rel="stylesheet" href="style.css">--->
+    <meta charset="utf-8">
+    <title>{% block title %}base{% endblock %}</title>
+    <style>
+        .content{
+          padding-left: 100px;
+          font-size : large;
+        }
+        .header{
+          text-align:center;
+          background: lightgray;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+        .header > p{
+          color: red;
+        }
+        button{
+          display: in-line;
+          background-color: blue;
+          color: white;
+          padding: 10px 10px;
+          border: white;
+          border-radius: 5px;
+          font-weight: bold
+        }
+</style>      
+</head>
+<body>
+    <div class="header">
+         <p>Built by 200050029 200050047</p> 
+         <h2>Welcome to GitHub Profiles!</h2>
+        
+         {% block dashboard %}{% endblock %}
+    
+   </div>
+   <div id=content>
+    {% block content %}
+    {% endblock %}
+   </div>
+   
+    
+</body>
+</html>

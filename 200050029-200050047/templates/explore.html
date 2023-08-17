@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}profile{% endblock %}
+{% block dashboard %}
+<a href=/explore>
+    <button type="button">
+        Explore
+    </button>
+</a> 
+<a href="/profileapp">
+    <button type="button">
+        My Profile
+    </button>
+</a>
+<a href="/accounts/login">
+    <button type="button">
+        Logout
+    </button>
+</a>
+{%endblock%}
+
+{%block content%}
+<div class="content">
+{%for user in users%}
+<a href="{% url 'otherprofile' pk=user.pk %}">
+    <h3>
+        <button type="button">
+        {{user.username}}
+        </button>
+    </h3>
+</a>
+{%endfor%}
+</div>
+{%endblock%}
